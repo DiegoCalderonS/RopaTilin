@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RopaTilin", "RopaTilin\RopaTilin.csproj", "{5966EE03-EF8B-499F-9D89-1F06AD910711}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5966EE03-EF8B-499F-9D89-1F06AD910711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5966EE03-EF8B-499F-9D89-1F06AD910711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5966EE03-EF8B-499F-9D89-1F06AD910711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5966EE03-EF8B-499F-9D89-1F06AD910711}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45967205-20C5-4962-AD6F-161A4816261B}
+	EndGlobalSection
+EndGlobal
