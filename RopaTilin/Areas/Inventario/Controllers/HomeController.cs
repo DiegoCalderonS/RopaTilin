@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RopaTilin.Models;
+using RopaTilin.Modelos.ViewModels;
 using System.Diagnostics;
 
-namespace RopaTilin.Controllers
+namespace RopaTilin.Areas.Inventario.Controllers
 {
+    [Area("Inventario")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
