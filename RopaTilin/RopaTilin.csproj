@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-RopaTilin-6b314b33-af3e-4771-a602-3aecc71a1ffe</UserSecretsId>
   </PropertyGroup>
@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="wwwroot\imagenes\productos\" />
   </ItemGroup>
 
 </Project>

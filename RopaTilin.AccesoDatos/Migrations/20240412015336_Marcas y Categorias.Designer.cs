@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RopaTilin.AccesoDatos;
 
@@ -11,9 +12,11 @@ using RopaTilin.AccesoDatos;
 namespace RopaTilin.AccesoDatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240412015336_Marcas y Categorias")]
+    partial class MarcasyCategorias
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -250,108 +253,6 @@ namespace RopaTilin.AccesoDatos.Migrations
                     b.ToTable("Bodega");
                 });
 
-            modelBuilder.Entity("RopaTilin.Modelos.Categoria", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Categoria");
-                });
-
-            modelBuilder.Entity("RopaTilin.Modelos.Marca", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Marca");
-                });
-
-            modelBuilder.Entity("RopaTilin.Modelos.Producto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoriaId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Costo")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ImagenUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MarcaId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NumeroSerie")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<int?>("PadreId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Precio")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoriaId");
-
-                    b.HasIndex("MarcaId");
-
-                    b.HasIndex("PadreId");
-
-                    b.ToTable("Productos");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -401,32 +302,6 @@ namespace RopaTilin.AccesoDatos.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("RopaTilin.Modelos.Producto", b =>
-                {
-                    b.HasOne("RopaTilin.Modelos.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("RopaTilin.Modelos.Marca", "Marca")
-                        .WithMany()
-                        .HasForeignKey("MarcaId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("RopaTilin.Modelos.Producto", "Padre")
-                        .WithMany()
-                        .HasForeignKey("PadreId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.Navigation("Categoria");
-
-                    b.Navigation("Marca");
-
-                    b.Navigation("Padre");
                 });
 #pragma warning restore 612, 618
         }

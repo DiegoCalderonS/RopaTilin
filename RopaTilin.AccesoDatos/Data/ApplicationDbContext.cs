@@ -9,7 +9,9 @@ namespace RopaTilin.AccesoDatos
     {
 
         public DbSet<Bodega> Bodegas { get; set; }
-
+        public DbSet<Bodega> Categorias { get; set; }
+        public DbSet<Bodega> Marca { get; set; }
+        public DbSet<Producto> Productos { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -11,6 +11,9 @@ namespace AccesoDatos.Repositorio.IRepositorio
     {
         IRopaRepositorio Bodegas { get; }
 
+        ICategoriaRepositorio Categorias { get; }
+        IMarcaRepositorio Marca { get; }
+        IProductoRepositorio Producto { get; }
         Task Guardar();
     }
 }
